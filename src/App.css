@@ -1,8 +1,56 @@
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c3e50;
+  padding: 15px 30px;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none; /* Removes underline */
+  cursor: pointer;
+}
+
+.logo:hover {
+  text-decoration: underline;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-button {
+  padding: 10px 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.nav-button:hover {
+  background-color: #2980b9;
+}
+
+/* Main Content */
 .app-container {
   text-align: center;
-  padding: 50px;
+  padding: 80px 20px; /* Ensures content does not overlap with fixed header */
   background-color: #f0f4f8;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,4 +101,10 @@
 
 .explore-button:hover, .back-button:hover {
   background-color: #2980b9;
+}
+
+/* Blank Pages */
+.blank-page {
+  text-align: center;
+  padding: 100px;
 }
