@@ -7,7 +7,7 @@ function Home() {
   return (
     <div className="app-container">
       <Header />
-      <header className="welcome-header">
+      <header className="home-header">
         <h1>Welcome to Safety635</h1>
         <p>Your one-stop platform for safety and protection.</p>
         <Link to="/resources">
