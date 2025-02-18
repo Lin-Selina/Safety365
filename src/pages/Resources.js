@@ -13,7 +13,7 @@ function Resources() {
         <ul className="resources-list">
           <li>Police Department: (555) 123-4567</li>
           <li>Fire Department: (555) 987-6543</li>
-          <li>Medical Emergency: (555) 111-2222</li>
+          <li>Medical Emergency: 911</li>
           <li>Disaster Helpline: (555) 333-4444</li>
         </ul>
         <Link to="/">
