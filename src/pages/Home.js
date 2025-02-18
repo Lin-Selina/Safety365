@@ -8,7 +8,7 @@ function Home() {
     <div className="app-container">
       <Header />
       <header className="home-header">
-        <h1>Welcome to Safety635</h1>
+        <h1>Welcome to Safety365</h1>
         <p>Your one-stop platform for safety and protection.</p>
         <Link to="/resources">
           <button className="explore-button">Explore Safety Resources</button>
