@@ -191,6 +191,7 @@
   font-size: 40px;
   font-weight: bold;
   color: #2c3e50; 
+  margin-bottom: 100px;
 }
 
 .welcome-buttons { /* Styling of the buttons in Welcome.js*/
