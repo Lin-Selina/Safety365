@@ -44,7 +44,7 @@
 }
 
 .nav-button {
-  padding: 10px 15px;
+  padding: 15px 20px;
   background-color: #1f5e88;
   color: white;
   border: none;
@@ -187,23 +187,19 @@
   }
 }
 
-/* Welcome Page */
-.welcome-heading {
+.welcome-heading { /* Styling for the Welcome.js heading */
   font-size: 40px;
   font-weight: bold;
-  color: #2c3e50;
+  color: #2c3e50; 
 }
 
-/* Welcome Buttons */
-.welcome-buttons {
+.welcome-buttons { /* Styling of the buttons in Welcome.js*/
   display: flex;
   gap: 15px;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
-.welcome-button {
-  padding: 10px 15px;
+.welcome-button { /* Text styling for the Welcome.js buttons */
+  padding: 15px 20px;
   background-color: #aa7320;
   color: white;
   border: none;
@@ -217,28 +213,42 @@
   background-color: #b68941;
 }
 
-/* Responsive Welcome Buttons */
-@media (max-width: 600px) {
-  .welcome-button {
-    padding: 8px 12px;
-    font-size: 14px;
-  }
+.welcome-paragraph1 { /* Styling for the Welcome.js paragraph 1*/
+  font-size: 20px; 
+  color: #606c76; 
+  line-height: 25px; 
+  text-align: left;
+  position: absolute; 
+  top: 50%;
+  left: 10%; 
 }
 
-/* Responsive Welcome Text */
-.welcome-paragraph {
-  font-size: 20px;
-  color: #606c76;
-  line-height: 25px;
-  text-align: center;
-  margin: 20px;
-  max-width: 90%;
+.welcome-paragraph2 { /* Styling for the Welcome.js paragraph 2*/
+  font-size: 20px; 
+  color: #606c76; 
+  line-height: 25px; 
+  text-align: right;
+  position: absolute; 
+  top: 50%; 
+  left: 53%; 
 }
 
-@media (max-width: 768px) {
-  .welcome-paragraph {
-    font-size: 18px;
-    line-height: 22px;
-    max-width: 95%;
-  }
+.welcome-paragraph3 { /* Styling for the Welcome.js paragraph 3*/
+  font-size: 20px; 
+  color: #606c76; 
+  line-height: 25px; 
+  text-align: right;
+  position: absolute; 
+  top: 80%; 
+  left: 7%; 
+}
+
+.welcome-paragraph4 { /* Styling for the Welcome.js paragraph 4*/
+  font-size: 20px; 
+  color: #606c76; 
+  line-height: 25px; 
+  text-align: right;
+  position: absolute; 
+  top: 80%; 
+  left: 53%; 
 }
