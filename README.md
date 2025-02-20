@@ -4,15 +4,33 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can:
 
-### `npm start`
+### Run the React client:
 
+cd into the src folder and run 'npm start' 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
+The page will reload when you make changes.
 You may also see any lint errors in the console.
+
+### Run the Node.js server:
+
+cd into the server folder and enter the following commands: 
+npm install jsonwebtoken
+npm install bcryptjs
+npm install cors
+npm install mysql2
+
+Once you have installed these dependencies, run "node server.js" and view in http://localhost:5000/ 
+
+### Run the SQL database:
+
+In Command Prompt/terminal, cd into the server folder where .sql files are present and run: 
+mysql -u <your_mysql_username> -p <your_mysql_password> < <name_of_.sql_file>
+
+### Other Useful Commands: 
 
 ### `npm test`
 

@@ -5,14 +5,39 @@ import Header from '../components/Header';
 
 function Gatorlink() {
   const navigate = useNavigate();
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState(''); // variable stores the username user input
+  const [password, setPassword] = useState(''); // variable stores the password user input
+  const [errorMessage, setErrorMessage] = useState(''); // state for error message
 
-  const handleLoginClick = () => {
-    // Implement login logic here
+  const handleLoginClick = async () => { // function called when user presses "Login" button
     console.log("Username:", username, "Password:", password);
-    navigate('/home'); 
-  };
+    navigate('/home');
+  
+    /*
+    try {
+      const response = await fetch('http://localhost:5000/gatorlink', {
+        method: 'POST', // Post request sends the username and password to the server
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }), // Pass username and password from variable state
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        console.log('Login successful:', data.message);
+        localStorage.setItem('token', data.token); // Store the token in localStorage for future use
+        navigate('/home');
+      } else {
+        setErrorMessage(data.message);
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      setErrorMessage('An error occurred. Please try again later.');
+    }
+    */
+  };  
 
   return (
     <div className="blank-page">
@@ -28,7 +53,7 @@ function Gatorlink() {
           className="login-input"
         />
         <input
-          type="password" // This password type allows for the eye feature in the password field
+          type="password" // this type "password" allows for the password to be hidden using the eye feature
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
