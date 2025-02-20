@@ -266,44 +266,42 @@
   }
 }
 
-.welcome-paragraph1 { /* Styling for the Welcome.js paragraph 1*/
-  font-size: 20px; 
-  color: #606c76; 
-  line-height: 25px; 
-  text-align: left;
-  position: absolute; 
-  top: 50%;
-  left: 10%; 
+/* Grid Layout */
+.welcome-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
-.welcome-paragraph2 { /* Styling for the Welcome.js paragraph 2*/
-  font-size: 20px; 
-  color: #606c76; 
-  line-height: 25px; 
-  text-align: right;
-  position: absolute; 
-  top: 50%; 
-  left: 53%; 
+.grid-item {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
 }
 
-.welcome-paragraph3 { /* Styling for the Welcome.js paragraph 3*/
-  font-size: 20px; 
-  color: #606c76; 
-  line-height: 25px; 
-  text-align: right;
-  position: absolute; 
-  top: 80%; 
-  left: 7%; 
+.grid-item:hover {
+  transform: translateY(-10px);
 }
 
-.welcome-paragraph4 { /* Styling for the Welcome.js paragraph 4*/
-  font-size: 20px; 
-  color: #606c76; 
-  line-height: 25px; 
-  text-align: right;
-  position: absolute; 
-  top: 80%; 
-  left: 53%; 
+.grid-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.grid-item h3 {
+  margin: 10px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.grid-item p {
+  margin: 10px;
+  color: #777;
 }
 
 .login-form {
