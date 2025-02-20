@@ -199,19 +199,71 @@
   gap: 15px;
 }
 
-.welcome-button { /* Text styling for the Welcome.js buttons */
-  padding: 15px 20px;
-  background-color: #aa7320;
-  color: white;
+/* Welcome Banner */
+.welcome-banner {
+  background-color: #f7f9fc;
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 2px solid #ccc;
+  margin-top: 0px; 
+}
+
+.welcome-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 40px;
+}
+
+.welcome-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.welcome-button, .nav-button {
+  padding: 12px 20px;
+  font-size: 16px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  color: white;
   font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.welcome-button {
+  background-color: #aa7320;
 }
 
 .welcome-button:hover {
   background-color: #b68941;
+}
+
+.nav-button {
+  background-color: #1f5e88;
+}
+
+.nav-button:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive Banner */
+@media (max-width: 768px) {
+  .welcome-heading {
+    font-size: 2rem;
+  }
+
+  .welcome-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .welcome-button, .nav-button {
+    width: 100%;
+    max-width: 300px;
+  }
 }
 
 .welcome-paragraph1 { /* Styling for the Welcome.js paragraph 1*/
