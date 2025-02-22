@@ -6,14 +6,14 @@ const cors = require('cors'); // Cross-Origin Resource Sharing (CORS) connects f
 const bodyParser = require('body-parser'); // parser for JSON data
 
 const app = express(); // create an express app on port 5000
-const port = 5000;
+const port = 5001;
 app.use(cors()); 
 app.use(bodyParser.json());
 
 const db = mysql.createConnection({ // create a connection to the MySQL database
   host: 'localhost', 
   user: 'root',      
-  password: '9415',     
+  password: 'Manuroach23#',     
   database: 'user_auth'
 });
 

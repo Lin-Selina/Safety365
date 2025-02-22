@@ -14,6 +14,15 @@ function Home() {
           <button className="explore-button">Explore Safety Resources</button>
         </Link>
       </header>
+      {/* Grid Layout */}
+    <div className="grid-container">
+      <Link to="/medical-emergency" className="grid-box">Medical Emergencies</Link>
+      <Link to="/mental-health" className="grid-box">Mental Health</Link>
+      <Link to="/safety-resources" className="grid-box">Safety Resources</Link>
+      <Link to="/natural-disasters" className="grid-box">Natural Disasters</Link>
+      <Link to="/fire-safety" className="grid-box">Fire Safety</Link>
+      <Link to="/campus-safety" className="grid-box">Campus Safety & Resources</Link>
+    </div>
     </div>
   );
 }

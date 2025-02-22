@@ -8,6 +8,12 @@ import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import Support from './pages/Support';
 import Gatorlink from './pages/Gatorlink'; 
+import Medical from './pages/Medical Emergency';
+import Mental from './pages/Mental Health';
+import Safety from './pages/Safety';
+import Natural from './pages/Natural Disaster';
+import Fire from './pages/Fire Safety';
+import Campus from './pages/Campus Safety';
 import './App.css';
 
 function App() {
@@ -22,6 +28,12 @@ function App() {
         <Route path="/faq" element={<FAQ />} />
         <Route path="/support" element={<Support />} />
         <Route path="/gatorlink" element={<Gatorlink />} />
+        <Route path="/medical" element={<Medical />} />
+        <Route path="/mental" element={<Mental />} />
+        <Route path="/safety" element={<Safety />} />
+        <Route path="/natural" element={<Natural />} />
+        <Route path="/fire" element={<Fire />} />
+        <Route path="/campus" element={<Campus />} />
       </Routes>
     </Router>
   );
