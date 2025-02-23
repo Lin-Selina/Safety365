@@ -17,7 +17,7 @@ function Welcome() {
   const gridItems = [
     {
       title: "Emergency Guides",
-      description: "Step-by-step guides for emergency situations.",
+      description: "Obtain step-by-step guides for emergency situations.",
       image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg" // Replace with actual image URL
     },
     {
@@ -48,11 +48,6 @@ function Welcome() {
           <button className="nav-button" onClick={handleSignInClick}>Sign in using GatorLink</button>
         </div>
       </div>
-      {/* Paragraphs */}
-      <p className="welcome-paragraph1">Obtain step-by-step guides for emergency situations</p>
-      <p className="welcome-paragraph2">Access safety resources provided by UF and curated by our team</p>
-      <p className="welcome-paragraph3">Find assistance for health, legal, counseling and academic support</p>
-      <p className="welcome-paragraph4">Get training on various campus measures to be prepared for dangers</p>
       {/* Grid Layout */}
       <div className="welcome-grid">
         {gridItems.map((item, index) => (
