@@ -9,26 +9,24 @@ function Gatorlink() {
   const [password, setPassword] = useState(''); // variable stores the password user input
   const [errorMessage, setErrorMessage] = useState(''); // state for error message
 
-  const handleLoginClick = async () => { // function called when user presses "Login" button
-    console.log("Username:", username, "Password:", password);
-    navigate('/home');
-  
-    /*
+  const handleLoginClick = async () => { 
     try {
-      const response = await fetch('http://localhost:5000/gatorlink', {
-        method: 'POST', // Post request sends the username and password to the server
+      // Send POST request to the backend
+      const response = await fetch('http://localhost:3000/login', {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, password }), // Pass username and password from variable state
+        body: JSON.stringify({ username, password }),
       });
   
       const data = await response.json();
   
       if (response.ok) {
-        console.log('Login successful:', data.message);
-        localStorage.setItem('token', data.token); // Store the token in localStorage for future use
-        navigate('/home');
+        // Store the token in localStorage if the login is successful
+        localStorage.setItem('token', data.token);
+        console.log('Login successful');
+        navigate('/home'); // Redirect to home page
       } else {
         setErrorMessage(data.message);
       }
@@ -36,8 +34,7 @@ function Gatorlink() {
       console.error('Error during login:', error);
       setErrorMessage('An error occurred. Please try again later.');
     }
-    */
-  };  
+  }; 
 
   return (
     <div className="blank-page">

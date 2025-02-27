@@ -58,6 +58,7 @@ function Welcome() {
           </div>
         ))}
       </div>
+      <p>If this is an emergency, please call 911.</p>
     
     
     </div>

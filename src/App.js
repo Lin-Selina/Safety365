@@ -3,17 +3,15 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Welcome from './pages/Welcome';
 import Resources from './pages/Resources';
-import About from './pages/About';
-import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import Support from './pages/Support';
 import Gatorlink from './pages/Gatorlink'; 
-import Medical from './pages/Medical Emergency';
-import Mental from './pages/Mental Health';
-import Safety from './pages/Safety';
-import Natural from './pages/Natural Disaster';
-import Fire from './pages/Fire Safety';
-import Campus from './pages/Campus Safety';
+import MedicalEmergency from './pages/MedicalEmergency';
+import MentalHealth from './pages/MentalHealth';
+import ActiveThreats from './pages/ActiveThreats';
+import NaturalDisasters from './pages/NaturalDisasters';
+import FireSafety from './pages/FireSafety';
+import CampusSafety from './pages/CampusSafety';
 import './App.css';
 
 function App() {
@@ -23,17 +21,15 @@ function App() {
         <Route path="/" element={<Welcome />} />
         <Route path="/home" element={<Home />} />
         <Route path="/resources" element={<Resources />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/support" element={<Support />} />
         <Route path="/gatorlink" element={<Gatorlink />} />
-        <Route path="/medical" element={<Medical />} />
-        <Route path="/mental" element={<Mental />} />
-        <Route path="/safety" element={<Safety />} />
-        <Route path="/natural" element={<Natural />} />
-        <Route path="/fire" element={<Fire />} />
-        <Route path="/campus" element={<Campus />} />
+        <Route path="/medical-emergency" element={<MedicalEmergency />} />
+        <Route path="/mental-health" element={<MentalHealth />} />
+        <Route path="/active-threats" element={<ActiveThreats />} />
+        <Route path="/natural-disasters" element={<NaturalDisasters />} />
+        <Route path="/fire-safety" element={<FireSafety />} />
+        <Route path="/campus-safety" element={<CampusSafety />} />
       </Routes>
     </Router>
   );
