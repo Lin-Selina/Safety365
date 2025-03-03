@@ -29,7 +29,7 @@ function Signup() {
 
       if (response.ok) {
         setSuccessMessage('Account created successfully! Redirecting to login...');
-        setTimeout(() => navigate('/login'), 2000);
+        setTimeout(() => navigate('/gatorlink'), 2000);
       } else {
         setErrorMessage(data.message);
       }

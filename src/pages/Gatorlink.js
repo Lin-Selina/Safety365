@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import '../App.css';
 import Header from '../components/Header';
+import { Link } from 'react-router-dom';
 
 function Gatorlink() {
   const navigate = useNavigate();
@@ -60,7 +61,7 @@ function Gatorlink() {
 
         {/* Signup link section */}
         <p className="signup-text">
-          Don't have an account? <a href="/signup" className="signup-link">Sign up here</a>
+          Don't have an account? <Link to="/signup" className="signup-link">Sign up here</Link>
         </p>
       </div>
     </div>

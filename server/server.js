@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 const db = mysql.createConnection({ // create a connection to the MySQL database
   host: 'localhost',
   user: 'root',      
-  password: '', // change your MySQL password if needed
+  password: 'Firebolt03', // change your MySQL password if needed
   database: 'user_auth'
 });
 
@@ -36,7 +36,7 @@ app.post('/login', (req, res) => {
     }
 
     if (results.length === 0) {
-      return res.status(400).json({ message: 'Username and/or password are NOT in the database already' });
+      return res.status(400).json({ message: 'Username and/or password is incorrect or does not exist' });
     }
 
     // Generate a JWT token
