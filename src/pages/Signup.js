@@ -11,8 +11,11 @@ function Signup() {
   const [successMessage, setSuccessMessage] = useState('');
 
   const handleSignupClick = async () => {
+    setErrorMessage('');
+    setSuccessMessage('');
+
     if (!username.endsWith('@ufl.edu')) {
-      setErrorMessage('Username must end with @ufl.edu');
+      setErrorMessage('You must have a @ufl.edu email to use this site.');
       return;
     }
 
