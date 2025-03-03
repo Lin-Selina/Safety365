@@ -12,6 +12,7 @@ import ActiveThreats from './pages/ActiveThreats';
 import NaturalDisasters from './pages/NaturalDisasters';
 import FireSafety from './pages/FireSafety';
 import CampusSafety from './pages/CampusSafety';
+import Signup from './pages/Signup';
 import './App.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/faq" element={<FAQ />} />
         <Route path="/support" element={<Support />} />
         <Route path="/gatorlink" element={<Gatorlink />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/medical-emergency" element={<MedicalEmergency />} />
         <Route path="/mental-health" element={<MentalHealth />} />
         <Route path="/active-threats" element={<ActiveThreats />} />

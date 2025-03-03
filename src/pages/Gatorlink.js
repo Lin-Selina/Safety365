@@ -5,13 +5,12 @@ import Header from '../components/Header';
 
 function Gatorlink() {
   const navigate = useNavigate();
-  const [username, setUsername] = useState(''); // variable stores the username user input
-  const [password, setPassword] = useState(''); // variable stores the password user input
-  const [errorMessage, setErrorMessage] = useState(''); // state for error message
+  const [username, setUsername] = useState(''); 
+  const [password, setPassword] = useState(''); 
+  const [errorMessage, setErrorMessage] = useState(''); 
 
   const handleLoginClick = async () => { 
     try {
-      // Send POST request to the backend
       const response = await fetch('http://localhost:3000/login', {
         method: 'POST',
         headers: {
@@ -23,10 +22,9 @@ function Gatorlink() {
       const data = await response.json();
   
       if (response.ok) {
-        // Store the token in localStorage if the login is successful
         localStorage.setItem('token', data.token);
         console.log('Login successful');
-        navigate('/home'); // Redirect to home page
+        navigate('/home'); 
       } else {
         setErrorMessage(data.message);
       }
@@ -50,13 +48,20 @@ function Gatorlink() {
           className="login-input"
         />
         <input
-          type="password" // this type "password" allows for the password to be hidden using the eye feature
+          type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           className="login-input"
         />
         <button className="login-button" onClick={handleLoginClick}>Login</button>
+        
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+
+        {/* Signup link section */}
+        <p className="signup-text">
+          Don't have an account? <a href="/signup" className="signup-link">Sign up here</a>
+        </p>
       </div>
     </div>
   );
