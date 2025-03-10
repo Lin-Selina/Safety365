@@ -404,3 +404,112 @@
   color: #2c3e50;
   margin-bottom: 10px;
 }
+
+.tracker-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 20px;
+}
+
+.mood-section {
+  flex: 1;
+  max-width: 40%;
+}
+
+.mood-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates 2 equal columns */
+  gap: 10px; /* Space between buttons */
+}
+
+.mood-button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  background: #e0e0e0;
+  transition: 0.3s;
+  text-align: center;
+  width: 100%; /* Makes all buttons equal width */
+}
+
+.mood-button.selected {
+  background: #4caf50;
+  color: white;
+}
+
+.notes-section {
+  flex: 1;
+  max-width: 50%;
+}
+
+.notes-input {
+  width: 100%;
+  height: 120px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.log-mood-button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.mood-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.log-mood-button:hover {
+  background: #0056b3;
+}
+
+/* Styles for the logged entries section */
+.logged-entries {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logged-entries h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.logged-entries ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.entry-item {
+  background: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-left: 5px solid #4caf50;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.entry-item strong {
+  font-size: 16px;
+  color: #333;
+}
+
+.entry-item p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #666;
+}

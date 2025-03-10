@@ -9,3 +9,12 @@ CREATE TABLE appUsers (
 );
 
 INSERT INTO appUsers (username, password) VALUES ('testuser@ufl.edu', 'testpassword');
+
+CREATE TABLE mood_entries (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    mood VARCHAR(50) NOT NULL,
+    notes TEXT,
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES appUsers(id) ON DELETE CASCADE 
+);

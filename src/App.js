@@ -13,6 +13,7 @@ import NaturalDisasters from './pages/NaturalDisasters';
 import FireSafety from './pages/FireSafety';
 import CampusSafety from './pages/CampusSafety';
 import Signup from './pages/Signup';
+import MentalHealthTracker from './pages/MentalHealthTracker';
 import './App.css';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path="/natural-disasters" element={<NaturalDisasters />} />
         <Route path="/fire-safety" element={<FireSafety />} />
         <Route path="/campus-safety" element={<CampusSafety />} />
+        <Route path="/mental-health-tracker" element={<MentalHealthTracker />} />
       </Routes>
     </Router>
   );

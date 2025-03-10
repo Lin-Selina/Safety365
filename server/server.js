@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 const db = mysql.createConnection({ // Create a connection to the MySQL database
   host: 'localhost',
   user: 'root',      
-  password: '', // Change your MySQL password if needed
+  password: '9415', // Change your MySQL password if needed
   database: 'user_auth'
 });
 
@@ -71,6 +71,19 @@ app.post('/signup', (req, res) => {
   });
 });
 
+// Handle adding mood entries
+app.post("/add-mood", (req, res) => {
+  const { userId, mood, notes } = req.body;
+  if (!userId || !mood) return res.status(400).json({ message: "User ID and mood are required." });
+
+  const query = "INSERT INTO mood_entries (user_id, mood, notes) VALUES (?, ?, ?)";
+  db.query(query, [userId, mood, notes], (err, result) => {
+    if (err) return res.status(500).json({ message: "Database error." });
+    res.status(201).json({ message: "Mood logged successfully!" });
+  });
+});
+
+// Start Server
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
