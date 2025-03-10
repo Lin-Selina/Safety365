@@ -13,18 +13,18 @@ function MentalHealth() {
       path: "/mental-health-tracker"
     },
     {
-      title: "Blah Blah Blah",
-      description: "Blah Blah Blah",
+      title: "Recognizing Mental Health Issues",
+      description: "Learn about common mental health issues and how to recognize the signs.",
       image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
     },
     {
-      title: "Blah Blah Blah",
-      description: "Blah Blah Blah",
+      title: "Meditation Guides and Activities",
+      description: "Find meditation guides and activities to help you relax and focus.",
       image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
     },
     {
-      title: "Blah Blah Blah",
-      description: "Blah Blah Blah",
+      title: "Mental Health Resources",
+      description: "Find resources for mental health support and crisis intervention.",
       image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
     }
   ];

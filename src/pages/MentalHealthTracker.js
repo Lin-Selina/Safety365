@@ -31,7 +31,6 @@ function MentalHealthTracker() {
 
       if (response.ok) {
         alert('Mood logged successfully!');
-        // Update the UI with the new entry from the database
         setEntries([...entries, { ...newEntry, date: new Date().toISOString() }]);
         setMood('');
         setNotes('');
@@ -55,7 +54,6 @@ function MentalHealthTracker() {
       <h1>Mental Health Tracker</h1>
 
       <div className="tracker-container">
-
         <div className="mood-section">
           <h3>Select Your Mood For This Entry:</h3>
           <div className="mood-grid">
@@ -83,18 +81,33 @@ function MentalHealthTracker() {
         </div>
       </div>
 
-      <div className="logged-entries">
-        <h3>Past Entries</h3>
-        {entries.length === 0 ? <p>No logs yet.</p> : (
-          <ul>
-            {entries.map((entry, index) => (
-              <li key={index} className="entry-item">
-                <strong>{new Date(entry.date).toLocaleString()}</strong> - {entry.mood}
-                {entry.notes && <p>Notes: {entry.notes}</p>}
-              </li>
-            ))}
-          </ul>
-        )}
+      <div className="entries-container">
+        <div className="entries-column">
+          <h3>Past Entries</h3>
+          {entries.length === 0 ? <p>No logs yet.</p> : (
+            <ul>
+              {entries.map((entry, index) => (
+                <li key={index} className="entry-item">
+                  <strong>{new Date(entry.date).toLocaleString()}</strong> - {entry.mood}
+                  {entry.notes && <p>Notes: {entry.notes}</p>}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        <div className="suggestions-column">
+          <h3>Suggested Tips</h3>
+          {entries.length === 0 ? <p>No suggestions yet.</p> : (
+            <ul>
+              {entries.map((entry, index) => (
+                <li key={index} className="suggestion-item">
+                  {"Add the suggestions here!"}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </div>
   );

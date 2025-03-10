@@ -513,3 +513,26 @@
   font-size: 14px;
   color: #666;
 }
+
+.entries-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.entries-column, .suggestions-column {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+.entry-item, .suggestion-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.entry-item:last-child, .suggestion-item:last-child {
+  border-bottom: none;
+}
