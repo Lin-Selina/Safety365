@@ -83,6 +83,21 @@ app.post("/add-mood", (req, res) => {
   });
 });
 
+// Handle fetching the past mood entries
+app.get("/entries/:userId", (req, res) => {
+  const { userId } = req.params;
+  const query = "SELECT id, mood, notes, date FROM mood_entries WHERE user_id = ? ORDER BY date DESC";
+
+  db.query(query, [userId], (err, results) => {
+    if (err) {
+      console.error("Error fetching mood entries:", err);
+      res.status(500).json({ error: "Internal Server Error" });
+    } else {
+      res.json(results);
+    }
+  });
+});
+
 // Start Server
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
