@@ -6,6 +6,7 @@ function MentalHealthTracker() {
   const [mood, setMood] = useState('');
   const [notes, setNotes] = useState('');
   const [entries, setEntries] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
   const userId = 1; // Replace this with actual logged-in user ID
 
   useEffect(() => {
@@ -48,10 +49,25 @@ function MentalHealthTracker() {
     "Embarrassed", "Exhausted", "Happy", "Joyful", "Nervous", "Overwhelmed", "Sad", "Shocked", "Worried"
   ];
 
+  const filteredEntries = entries.filter(entry =>
+    entry.mood.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    (entry.notes && entry.notes.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
+
   return (
     <div className="blank-page">
       <Header />
       <h1>Mental Health Tracker</h1>
+
+      <div className="search-bar-container">
+        <input
+          type="text"
+          placeholder="Search past entries..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="search-bar"
+        />
+      </div>
 
       <div className="tracker-container">
         <div className="mood-section">
@@ -84,9 +100,9 @@ function MentalHealthTracker() {
       <div className="entries-container">
         <div className="entries-column">
           <h3>Past Entries</h3>
-          {entries.length === 0 ? <p>No logs yet.</p> : (
+          {filteredEntries.length === 0 ? <p>No logs found.</p> : (
             <ul>
-              {entries.map((entry, index) => (
+              {filteredEntries.map((entry, index) => (
                 <li key={index} className="entry-item">
                   <strong>{new Date(entry.date).toLocaleString()}</strong> - {entry.mood}
                   {entry.notes && <p>Notes: {entry.notes}</p>}
@@ -98,9 +114,9 @@ function MentalHealthTracker() {
 
         <div className="suggestions-column">
           <h3>Suggested Tips</h3>
-          {entries.length === 0 ? <p>No suggestions yet.</p> : (
+          {filteredEntries.length === 0 ? <p>No suggestions yet.</p> : (
             <ul>
-              {entries.map((entry, index) => (
+              {filteredEntries.map((entry, index) => (
                 <li key={index} className="suggestion-item">
                   {"Add the suggestions here!"}
                 </li>
