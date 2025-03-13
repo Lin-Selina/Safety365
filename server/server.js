@@ -98,6 +98,28 @@ app.get("/entries/:userId", (req, res) => {
   });
 });
 
+// Handle searching mood entries
+app.get("/search-entries/:userId", (req, res) => {
+  const { userId } = req.params;
+  const { searchTerm } = req.query;
+  
+  if (!searchTerm) {
+    return res.status(400).json({ message: "Search term is required." });
+  }
+
+  const query = "SELECT id, mood, notes, date FROM mood_entries WHERE user_id = ? AND (mood LIKE ? OR notes LIKE ?) ORDER BY date DESC";
+  const searchPattern = `%${searchTerm}%`;
+
+  db.query(query, [userId, searchPattern, searchPattern], (err, results) => {
+    if (err) {
+      console.error("Error searching mood entries:", err);
+      res.status(500).json({ error: "Internal Server Error" });
+    } else {
+      res.json(results);
+    }
+  });
+});
+
 // Start Server
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
