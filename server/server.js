@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken'); // JSON Web Token (JWT) is used for authent
 const mysql = require('mysql2'); // SQL database client
 const cors = require('cors'); // Cross-Origin Resource Sharing (CORS) connects frontend and backend servers
 const bodyParser = require('body-parser'); // Parser for JSON data
+const axios = require('axios');
 
 const app = express();
 const port = 3000;
@@ -118,6 +119,28 @@ app.get("/search-entries/:userId", (req, res) => {
       res.json(results);
     }
   });
+});
+
+// Handle location data
+app.post("/api/location", async (req, res) => {
+  const { lat, lon } = req.body;
+
+  if (!lat || !lon) {
+    return res.status(400).json({ message: "Latitude and longitude required." });
+  }
+
+  try {
+    const apiKey = 'd30a1c28965d4a0994d1b29ec6b1d6e8'; 
+    const response = await axios.get(
+      `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lon}&key=${apiKey}`
+    );
+
+    const address = response.data?.results?.[0]?.formatted || 'Unknown location';
+    res.json({ address });
+  } catch (error) {
+    console.error("Geocoding failed:", error.message);
+    res.status(500).json({ message: "Error fetching location." });
+  }
 });
 
 // Start Server
