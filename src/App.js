@@ -14,6 +14,11 @@ import FireSafety from './pages/FireSafety';
 import CampusSafety from './pages/CampusSafety';
 import Signup from './pages/Signup';
 import MentalHealthTracker from './pages/MentalHealthTracker';
+import TornadoSafety from './pages/TornadoSafety';
+import HurricanePreparedness from './pages/HurricanePreparedness';
+import SevereThunderstormSafety from './pages/SevereThunderstormSafety';
+import FloodSafety from './pages/FloodSafety';
+import WildfireSafety from './pages/WildfireSafety';
 import './App.css';
 
 function App() {
@@ -34,6 +39,11 @@ function App() {
         <Route path="/fire-safety" element={<FireSafety />} />
         <Route path="/campus-safety" element={<CampusSafety />} />
         <Route path="/mental-health-tracker" element={<MentalHealthTracker />} />
+        <Route path="/tornado-safety" element={<TornadoSafety />} />
+        <Route path="/hurricane-preparedness" element={<HurricanePreparedness />} />
+        <Route path="/severe-thunderstorm-safety" element={<SevereThunderstormSafety />} />
+        <Route path="/flood-safety" element={<FloodSafety />} />
+        <Route path="/wildfire-safety" element={<WildfireSafety />} />
       </Routes>
     </Router>
   );

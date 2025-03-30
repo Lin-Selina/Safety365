@@ -23,8 +23,8 @@ function MentalHealth() {
       image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
     },
     {
-      title: "Mental Health Resources",
-      description: "Find resources for mental health support and crisis intervention.",
+      title: "Mental Health Guides",
+      description: "Find guides for mental health support and crisis intervention.",
       image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
     }
   ];
