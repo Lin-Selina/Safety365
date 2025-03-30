@@ -7,10 +7,14 @@ function MentalHealthTracker() {
   const [notes, setNotes] = useState('');
   const [entries, setEntries] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const userId = 1; // Replace this with actual logged-in user ID
+  const token = localStorage.getItem('token'); // or get from context
 
   useEffect(() => {
-    fetch(`http://localhost:3000/entries/${userId}`)
+    fetch('http://localhost:3000/entries', {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })    
       .then(response => response.json())
       .then(data => setEntries(data))
       .catch(error => console.error('Error fetching mood entries:', error));
@@ -19,20 +23,25 @@ function MentalHealthTracker() {
   const handleLogMoodClick = async () => {
     if (!mood) return alert('ERROR: You have not selected a mood!');
 
-    const newEntry = { userId, mood, notes };
+    const newEntry = { mood, notes, date: new Date().toISOString() };
 
     try {
       const response = await fetch('http://localhost:3000/add-mood', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newEntry),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ mood, notes }),
       });
+      
 
       const data = await response.json();
 
       if (response.ok) {
         alert('Mood logged successfully!');
-        setEntries([...entries, { ...newEntry, date: new Date().toISOString() }]);
+        setEntries([...entries, newEntry]);
+
         setMood('');
         setNotes('');
       } else {

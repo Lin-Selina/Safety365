@@ -1,19 +1,20 @@
-const express = require('express'); // Express is a web framework for Node.js
-const jwt = require('jsonwebtoken'); // JSON Web Token (JWT) is used for authentication
-const mysql = require('mysql2'); // SQL database client
-const cors = require('cors'); // Cross-Origin Resource Sharing (CORS) connects frontend and backend servers
-const bodyParser = require('body-parser'); // Parser for JSON data
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const mysql = require('mysql2');
+const cors = require('cors');
+const bodyParser = require('body-parser');
 const axios = require('axios');
+const authenticateToken = require('./routes/auth');
 
 const app = express();
 const port = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-const db = mysql.createConnection({ // Create a connection to the MySQL database
+const db = mysql.createConnection({
   host: 'localhost',
-  user: 'root',      
-  password: '', // Change your MySQL password if needed
+  user: 'root',
+  password: 'Firebolt03',
   database: 'user_auth'
 });
 
@@ -25,7 +26,7 @@ db.connect((err) => {
   }
 });
 
-// Handle user login
+// 🔐 Handle user login
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
 
@@ -45,7 +46,7 @@ app.post('/login', (req, res) => {
   });
 });
 
-// Handle user signup
+// 🔐 Handle user signup
 app.post('/signup', (req, res) => {
   const { username, password } = req.body;
 
@@ -72,10 +73,12 @@ app.post('/signup', (req, res) => {
   });
 });
 
-// Handle adding mood entries
-app.post("/add-mood", (req, res) => {
-  const { userId, mood, notes } = req.body;
-  if (!userId || !mood) return res.status(400).json({ message: "User ID and mood are required." });
+// 🔐 Add mood entry (protected)
+app.post("/add-mood", authenticateToken, (req, res) => {
+  const { mood, notes } = req.body;
+  const userId = req.user.userId;
+
+  if (!mood) return res.status(400).json({ message: "Mood is required." });
 
   const query = "INSERT INTO mood_entries (user_id, mood, notes) VALUES (?, ?, ?)";
   db.query(query, [userId, mood, notes], (err, result) => {
@@ -84,11 +87,11 @@ app.post("/add-mood", (req, res) => {
   });
 });
 
-// Handle fetching the past mood entries
-app.get("/entries/:userId", (req, res) => {
-  const { userId } = req.params;
-  const query = "SELECT id, mood, notes, date FROM mood_entries WHERE user_id = ? ORDER BY date DESC";
+// 🔐 Fetch past mood entries (protected)
+app.get("/entries", authenticateToken, (req, res) => {
+  const userId = req.user.userId;
 
+  const query = "SELECT id, mood, notes, date FROM mood_entries WHERE user_id = ? ORDER BY date DESC";
   db.query(query, [userId], (err, results) => {
     if (err) {
       console.error("Error fetching mood entries:", err);
@@ -99,11 +102,11 @@ app.get("/entries/:userId", (req, res) => {
   });
 });
 
-// Handle searching mood entries
-app.get("/search-entries/:userId", (req, res) => {
-  const { userId } = req.params;
+// 🔐 Search mood entries (protected)
+app.get("/search-entries", authenticateToken, (req, res) => {
+  const userId = req.user.userId;
   const { searchTerm } = req.query;
-  
+
   if (!searchTerm) {
     return res.status(400).json({ message: "Search term is required." });
   }
@@ -121,7 +124,7 @@ app.get("/search-entries/:userId", (req, res) => {
   });
 });
 
-// Handle location data
+// 🌍 Handle location data (no auth needed)
 app.post("/api/location", async (req, res) => {
   const { lat, lon } = req.body;
 
@@ -130,7 +133,7 @@ app.post("/api/location", async (req, res) => {
   }
 
   try {
-    const apiKey = 'd30a1c28965d4a0994d1b29ec6b1d6e8'; 
+    const apiKey = 'd30a1c28965d4a0994d1b29ec6b1d6e8';
     const response = await axios.get(
       `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lon}&key=${apiKey}`
     );
@@ -143,7 +146,7 @@ app.post("/api/location", async (req, res) => {
   }
 });
 
-// Start Server
+// 🚀 Start Server
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
