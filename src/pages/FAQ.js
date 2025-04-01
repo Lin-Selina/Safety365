@@ -84,7 +84,7 @@ function FAQ() {
         />
       </div>
       {/* Questions section placed right below the FAQ area */}
-      <ContactForm />
+      {/* <ContactForm /> */}
     </div>
   );
 }
