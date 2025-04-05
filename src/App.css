@@ -548,3 +548,16 @@
 .entry-item:last-child, .suggestion-item:last-child {
   border-bottom: none;
 }
+
+.checklist {
+  list-style: none;
+  padding-left: 0;
+}
+
+.checklist li {
+  margin: 0.5rem 0;
+}
+
+.checklist input[type="checkbox"] {
+  margin-right: 0.5rem;
+}

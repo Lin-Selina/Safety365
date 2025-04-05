@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'Firebolt03',
+  password: '',
   database: 'user_auth'
 });
 
@@ -26,7 +26,7 @@ db.connect((err) => {
   }
 });
 
-// 🔐 Handle user login
+// Handle user login
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
 
@@ -46,7 +46,7 @@ app.post('/login', (req, res) => {
   });
 });
 
-// 🔐 Handle user signup
+// Handle user signup
 app.post('/signup', (req, res) => {
   const { username, password } = req.body;
 
@@ -73,7 +73,7 @@ app.post('/signup', (req, res) => {
   });
 });
 
-// 🔐 Add mood entry (protected)
+// Add mood entry (protected)
 app.post("/add-mood", authenticateToken, (req, res) => {
   const { mood, notes } = req.body;
   const userId = req.user.userId;
@@ -87,7 +87,7 @@ app.post("/add-mood", authenticateToken, (req, res) => {
   });
 });
 
-// 🔐 Fetch past mood entries (protected)
+// Fetch past mood entries (protected)
 app.get("/entries", authenticateToken, (req, res) => {
   const userId = req.user.userId;
 
@@ -102,7 +102,7 @@ app.get("/entries", authenticateToken, (req, res) => {
   });
 });
 
-// 🔐 Search mood entries (protected)
+// Search mood entries (protected)
 app.get("/search-entries", authenticateToken, (req, res) => {
   const userId = req.user.userId;
   const { searchTerm } = req.query;
@@ -124,7 +124,7 @@ app.get("/search-entries", authenticateToken, (req, res) => {
   });
 });
 
-// 🌍 Handle location data (no auth needed)
+// Handle location data (no auth needed)
 app.post("/api/location", async (req, res) => {
   const { lat, lon } = req.body;
 
@@ -146,7 +146,36 @@ app.post("/api/location", async (req, res) => {
   }
 });
 
-// 🚀 Start Server
+// Save checkbox state to hurricane_checklist
+app.post('/checkbox', (req, res) => {
+  const { item, checked } = req.body;
+
+  if (!item) return res.status(400).json({ message: 'Item name is required.' });
+
+  const query = "INSERT INTO hurricane_checklist (item, checked) VALUES (?, ?) ON DUPLICATE KEY UPDATE checked = VALUES(checked)"; 
+  db.query(query, [item, checked ? 1 : 0], (err, result) => {
+    if (err) {
+      console.error('Error storing checkbox:', err);
+      return res.status(500).json({ message: 'Database error' });
+    }
+
+    res.status(200).json({ message: 'Checkbox state saved.' });
+  });
+});
+
+// Get the checkbox state from hurricane_checklist
+app.get('/api/checkbox', (req, res) => {
+  db.query('SELECT item, checked FROM hurricane_checklist', (err, results) => {
+    if (err) {
+      console.error('Error fetching checklist:', err);
+      return res.status(500).json({ message: 'Database error' });
+    }
+    res.status(200).json(results);
+  });
+});
+
+
+// Start Server
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
