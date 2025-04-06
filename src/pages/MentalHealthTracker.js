@@ -10,15 +10,27 @@ function MentalHealthTracker() {
   const token = localStorage.getItem('token'); // or get from context
 
   useEffect(() => {
-    fetch('http://localhost:3000/entries', {
-      headers: {
-        'Authorization': `Bearer ${token}`
+    const fetchEntries = async () => {
+      try {
+        const url = searchTerm.trim() === ''
+          ? 'http://localhost:3000/entries'
+          : `http://localhost:3000/search-entries?searchTerm=${encodeURIComponent(searchTerm)}`;
+
+        const response = await fetch(url, {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+
+        const data = await response.json();
+        setEntries(data);
+      } catch (error) {
+        console.error('Error fetching mood entries:', error);
       }
-    })    
-      .then(response => response.json())
-      .then(data => setEntries(data))
-      .catch(error => console.error('Error fetching mood entries:', error));
-  }, []);
+    };
+
+    fetchEntries();
+  }, [searchTerm, token]);
 
   const handleLogMoodClick = async () => {
     if (!mood) return alert('ERROR: You have not selected a mood!');
@@ -34,14 +46,12 @@ function MentalHealthTracker() {
         },
         body: JSON.stringify({ mood, notes }),
       });
-      
 
       const data = await response.json();
 
       if (response.ok) {
         alert('Mood logged successfully!');
         setEntries([...entries, newEntry]);
-
         setMood('');
         setNotes('');
       } else {
@@ -58,11 +68,6 @@ function MentalHealthTracker() {
     "Embarrassed", "Exhausted", "Happy", "Joyful", "Nervous", "Overwhelmed", "Sad", "Shocked", "Worried"
   ];
 
-  const filteredEntries = entries.filter(entry =>
-    entry.mood.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    (entry.notes && entry.notes.toLowerCase().includes(searchTerm.toLowerCase()))
-  );
-
   return (
     <div className="blank-page">
       <Header />
@@ -71,7 +76,7 @@ function MentalHealthTracker() {
       <div className="search-bar-container">
         <input
           type="text"
-          placeholder="Search past entries..."
+          placeholder="Search past entries by mood, notes, or date..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="search-bar"
@@ -83,9 +88,9 @@ function MentalHealthTracker() {
           <h3>Select Your Mood For This Entry:</h3>
           <div className="mood-grid">
             {moods.map((m, index) => (
-              <button 
-                key={index} 
-                className={`mood-button ${mood === m ? 'selected' : ''}`} 
+              <button
+                key={index}
+                className={`mood-button ${mood === m ? 'selected' : ''}`}
                 onClick={() => setMood(m)}
               >
                 {m}
@@ -102,16 +107,18 @@ function MentalHealthTracker() {
             onChange={(e) => setNotes(e.target.value)}
             className="notes-input"
           />
-          <button className="log-mood-button" onClick={handleLogMoodClick}>Log This Mood Entry</button>
+          <button className="log-mood-button" onClick={handleLogMoodClick}>
+            Log This Mood Entry
+          </button>
         </div>
       </div>
 
       <div className="entries-container">
         <div className="entries-column">
           <h3>Past Entries</h3>
-          {filteredEntries.length === 0 ? <p>No logs found.</p> : (
+          {entries.length === 0 ? <p>No logs found.</p> : (
             <ul>
-              {filteredEntries.map((entry, index) => (
+              {entries.map((entry, index) => (
                 <li key={index} className="entry-item">
                   <strong>{new Date(entry.date).toLocaleString()}</strong> - {entry.mood}
                   {entry.notes && <p>Notes: {entry.notes}</p>}
@@ -123,9 +130,9 @@ function MentalHealthTracker() {
 
         <div className="suggestions-column">
           <h3>Suggested Tips</h3>
-          {filteredEntries.length === 0 ? <p>No suggestions yet.</p> : (
+          {entries.length === 0 ? <p>No suggestions yet.</p> : (
             <ul>
-              {filteredEntries.map((entry, index) => (
+              {entries.map((entry, index) => (
                 <li key={index} className="suggestion-item">
                   {"Add the suggestions here!"}
                 </li>

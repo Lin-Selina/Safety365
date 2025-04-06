@@ -111,10 +111,21 @@ app.get("/search-entries", authenticateToken, (req, res) => {
     return res.status(400).json({ message: "Search term is required." });
   }
 
-  const query = "SELECT id, mood, notes, date FROM mood_entries WHERE user_id = ? AND (mood LIKE ? OR notes LIKE ?) ORDER BY date DESC";
-  const searchPattern = `%${searchTerm}%`;
+  const query = `
+  SELECT id, mood, notes, date 
+  FROM mood_entries 
+  WHERE user_id = ? 
+    AND (
+      mood LIKE ? 
+      OR notes LIKE ? 
+      OR DATE_FORMAT(date, '%c/%e/%Y') LIKE ?
+    )
+  ORDER BY date DESC
+`;
 
-  db.query(query, [userId, searchPattern, searchPattern], (err, results) => {
+  const pattern = `%${searchTerm}%`;
+
+  db.query(query, [userId, pattern, pattern, pattern], (err, results) => {
     if (err) {
       console.error("Error searching mood entries:", err);
       res.status(500).json({ error: "Internal Server Error" });
