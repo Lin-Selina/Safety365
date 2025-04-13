@@ -663,3 +663,41 @@
   margin-bottom: 10px;
   line-height: 1.5;
 }
+
+.fire-box {
+  border: 2px solid #f5a623;
+  background-color: #fff4e6;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.fire-box h2 {
+  margin-bottom: 12px;
+  color: #c0392b;
+}
+
+.fire-box p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.campus-box {
+  border: 2px solid #b3cde0;
+  background-color: #f0f7fc;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.campus-box h2 {
+  margin-bottom: 12px;
+  color: #003366;
+}
+
+.campus-box p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
