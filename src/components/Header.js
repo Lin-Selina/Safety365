@@ -7,7 +7,7 @@ function Header() {
 
   return (
     <nav className="header">
-      <Link to="/" className="logo">Safety365</Link> {/* Clickable Logo */}
+      <Link to="/" className="logo">Swamp Support</Link> {/* Clickable Logo */}
       <div className="nav-buttons">
         {location.pathname !== '/' && ( // display Home button only if not on Welcome page
           <Link to="/home"><button className="nav-button">Home</button></Link>

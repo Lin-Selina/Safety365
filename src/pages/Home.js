@@ -8,7 +8,7 @@ function Home() {
     <div className="app-container">
       <Header />
       <header className="home-header">
-        <h1>Welcome to Safety365</h1>
+        <h1>Welcome to Swamp Support</h1>
         <p>Your one-stop platform for safety and protection.</p>
       </header>
       {/* Grid Layout */}

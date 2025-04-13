@@ -63,12 +63,8 @@ function FAQ() {
       <h1>Frequently Asked Questions</h1>
       <div className="faq">
         <FAQItem
-          question="What is Safety365?"
-          answer="Safety365 provides real-time alerts, emergency contact information, and safety resources to help keep students, staff, and visitors safe on campus."
-        />
-        <FAQItem
-          question="How do I download and install the app?"
-          answer="You can download the app from the Apple App Store or Google Play Store by searching for 'UF Safety App'. Follow the on-screen instructions to install it on your mobile device."
+          question="What is Swamp Support?"
+          answer="Swamp Support provides real-time alerts, emergency contact information, and safety resources to help keep students, staff, and visitors safe on campus."
         />
         <FAQItem
           question="How do I report an emergency?"
@@ -76,7 +72,7 @@ function FAQ() {
         />
         <FAQItem
           question="Is my personal information safe?"
-          answer="Absolutely. The UF Safety App adheres to strict privacy and data protection policies set by the University of Florida. Your personal information is encrypted and securely stored."
+          answer="Absolutely. Swamp Support adheres to strict privacy and data protection policies set by the University of Florida. Your personal information is encrypted and securely stored."
         />
         <FAQItem
           question="Who do I contact for support?"
