@@ -561,3 +561,105 @@
 .checklist input[type="checkbox"] {
   margin-right: 0.5rem;
 }
+
+.checklist-box {
+  border: 2px solid #d9d9d9;
+  background-color: #fefefe;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.checklist-box h3 {
+  margin-bottom: 12px;
+}
+
+.emergency-box {
+  border: 2px solid #e0e0e0;
+  background-color: #fafafa;
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 12px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.storm-box {
+  border: 2px solid #ccc;
+  background-color: #f4f9ff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.storm-box h2 {
+  margin-bottom: 10px;
+  color: #003366;
+}
+
+.storm-box ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.storm-box li {
+  margin-bottom: 8px;
+}
+
+.flood-box {
+  border: 2px solid #aad3e6;
+  background-color: #f0faff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.flood-box h2 {
+  margin-bottom: 12px;
+  color: #004c6d;
+}
+
+.flood-box p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.tornado-box {
+  border: 2px solid #d8d8d8;
+  background-color: #fdf7f7;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.tornado-box h2 {
+  margin-bottom: 10px;
+  color: #6d1e1e;
+}
+
+.tornado-box p {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.wildfire-box {
+  border: 2px solid #e8b389;
+  background-color: #fff6f0;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.wildfire-box h2 {
+  margin-bottom: 12px;
+  color: #b04a1c;
+}
+
+.wildfire-box p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}

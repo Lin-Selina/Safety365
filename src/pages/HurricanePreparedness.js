@@ -6,7 +6,6 @@ function HurricanePreparedness() {
   const [notes, setNotes] = useState('');
   const [checkboxes, setCheckboxes] = useState({});
 
-  // Fetch initial checkbox states from backend on mount
   useEffect(() => {
     fetch('http://localhost:3000/api/checkbox')
       .then(res => res.json())
@@ -24,17 +23,13 @@ function HurricanePreparedness() {
     console.log("Notes submitted:", notes);
   };
 
-  // Handle checkbox toggle and send to backend
   const handleCheckboxChange = (item) => {
     const newChecked = !checkboxes[item];
-
-    // Update local state
     setCheckboxes((prev) => ({
       ...prev,
       [item]: newChecked,
     }));
 
-    // Send update to server
     fetch('http://localhost:3000/checkbox', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -50,24 +45,22 @@ function HurricanePreparedness() {
   };
 
   const renderChecklist = (title, items) => (
-    <div className="tracker-container">
-      <div className="mood-section">
-        <h3>{title}</h3>
-        <ul className="checklist">
-          {items.map((item, index) => (
-            <li key={index}>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={checkboxes[item] || false}
-                  onChange={() => handleCheckboxChange(item)}
-                />
-                {` ${item}`}
-              </label>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div className="checklist-box">
+      <h3>{title}</h3>
+      <ul className="checklist">
+        {items.map((item, index) => (
+          <li key={index}>
+            <label>
+              <input
+                type="checkbox"
+                checked={checkboxes[item] || false}
+                onChange={() => handleCheckboxChange(item)}
+              />
+              {` ${item}`}
+            </label>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 
@@ -76,7 +69,7 @@ function HurricanePreparedness() {
       <Header />
       <h1>Hurricane Preparedness</h1>
 
-      {renderChecklist("Emergency Supply Checklist", [
+      {renderChecklist("🌪️ Emergency Supply Checklist", [
         "Flashlight with extra batteries",
         "Battery Operated Radio with extra batteries",
         "Candles with matches/lighter",
@@ -87,7 +80,7 @@ function HurricanePreparedness() {
         "Hand sanitizer and disinfectant wipes"
       ])}
 
-      {renderChecklist("First-Aid Checklist", [
+      {renderChecklist("🩹 First-Aid Checklist", [
         "Band-Aids",
         "Peroxide",
         "Prescriptions",
@@ -103,7 +96,7 @@ function HurricanePreparedness() {
         "Antacid (for stomach upset)"
       ])}
 
-      {renderChecklist("Personal Necessities Checklist", [
+      {renderChecklist("🧻 Personal Necessities Checklist", [
         "Toilet Paper",
         "Garbage Bags",
         "Ziplock Bags",
@@ -116,7 +109,7 @@ function HurricanePreparedness() {
         "Phone Charger"
       ])}
 
-      {renderChecklist("Food and Drinks Checklist", [
+      {renderChecklist("🍽️ Food and Drinks Checklist", [
         "Manual Can Opener",
         "Water for 3 days for each person",
         "Non-perishable food items",
@@ -127,7 +120,7 @@ function HurricanePreparedness() {
         "Snacks"
       ])}
 
-      {renderChecklist("Documents Checklist", [
+      {renderChecklist("📄 Documents Checklist", [
         "State ID / Driver's License",
         "Passport",
         "Wills",
@@ -136,15 +129,17 @@ function HurricanePreparedness() {
         "Vaccination Records"
       ])}
 
-      <div className="notes-section">
-        <h3>Write your personal to-do items or notes here!</h3>
+      <div className="checklist-box notes-section">
+        <h3>📝 Personal Notes</h3>
         <textarea
           placeholder="Write your entry here..."
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
           className="notes-input"
         />
-        <button className="log-mood-button" onClick={handleNotesClick}>Log This Note</button>
+        <button className="log-mood-button" onClick={handleNotesClick}>
+          Log This Note
+        </button>
       </div>
     </div>
   );
