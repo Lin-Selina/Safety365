@@ -23,9 +23,15 @@ function MentalHealthTracker() {
         });
 
         const data = await response.json();
-        setEntries(data);
+        if (Array.isArray(data)) {
+          setEntries(data);
+        } else {
+          console.error('Unexpected response format:', data);
+          setEntries([]);
+        }
       } catch (error) {
         console.error('Error fetching mood entries:', error);
+        setEntries([]);
       }
     };
 
@@ -51,7 +57,7 @@ function MentalHealthTracker() {
 
       if (response.ok) {
         alert('Mood logged successfully!');
-        setEntries([...entries, newEntry]);
+        setEntries(prev => Array.isArray(prev) ? [...prev, newEntry] : [newEntry]);
         setMood('');
         setNotes('');
       } else {
@@ -116,9 +122,9 @@ function MentalHealthTracker() {
       <div className="entries-container">
         <div className="entries-column">
           <h3>Past Entries</h3>
-          {entries.length === 0 ? <p>No logs found.</p> : (
+          {Array.isArray(entries) && entries.length === 0 ? <p>No logs found.</p> : (
             <ul>
-              {entries.map((entry, index) => (
+              {Array.isArray(entries) && entries.map((entry, index) => (
                 <li key={index} className="entry-item">
                   <strong>{new Date(entry.date).toLocaleString()}</strong> - {entry.mood}
                   {entry.notes && <p>Notes: {entry.notes}</p>}
@@ -130,9 +136,9 @@ function MentalHealthTracker() {
 
         <div className="suggestions-column">
           <h3>Suggested Tips</h3>
-          {entries.length === 0 ? <p>No suggestions yet.</p> : (
+          {Array.isArray(entries) && entries.length === 0 ? <p>No suggestions yet.</p> : (
             <ul>
-              {entries.map((entry, index) => (
+              {Array.isArray(entries) && entries.map((entry, index) => (
                 <li key={index} className="suggestion-item">
                   {"Add the suggestions here!"}
                 </li>
