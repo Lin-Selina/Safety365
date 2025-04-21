@@ -86,9 +86,9 @@ function ActiveThreats() {
   return (
     <div className="blank-page">
       <Header />
-      <h1>Active Threats</h1>
+      <h1 className="threats-heading">Active Threats</h1>
       
-      <button onClick={handleGetLocation}>Get My Location</button>
+      <button className="login-button" onClick={handleGetLocation}>Get My Location</button>
 
       {coords && (
         <>
