@@ -198,6 +198,7 @@
   text-align: center;
   padding: 100px 20px;
   width: 100%;
+  background-color: var(--background-color);
 }
 
 .blank-page h1 {
