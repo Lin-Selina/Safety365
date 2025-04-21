@@ -18,22 +18,22 @@ function Welcome() {
     {
       title: "Emergency Guides",
       description: "Obtain step-by-step guides for emergency situations.",
-      image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg" // Replace with actual image URL
+      image: "/emergency.png"
     },
     {
       title: "Safety Resources",
       description: "Access UF safety resources curated by our team.",
-      image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
+      image: "/safety resources.png"
     },
     {
       title: "Support Services",
       description: "Find health, legal, counseling, and academic support.",
-      image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
+      image: "/support services.png"
     },
     {
       title: "Training Programs",
       description: "Get training on campus safety measures.",
-      image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
+      image: "/training programs.png"
     }
   ];
 

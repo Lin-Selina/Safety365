@@ -110,7 +110,7 @@
 
 .home-header p {
   font-size: 1.2rem;
-  color: #606c76;
+  color: black;
   margin-bottom: 20px;
 }
 
@@ -198,6 +198,7 @@
   text-align: center;
   padding: 100px 20px;
   width: 100%;
+  background-color: var(--background-color);
 }
 
 .blank-page h1 {
@@ -206,7 +207,7 @@
 
 .blank-page p {
   font-size: 1.2rem;
-  color: #606c76;
+  color: var(--text-color);
 }
 
 /* Responsive Blank Pages */
@@ -308,6 +309,7 @@
   padding: 20px;
   background-color: var(--background-color);
   color: var(--text-color);
+  margin-bottom: 40px;
 }
 
 .grid-item {
