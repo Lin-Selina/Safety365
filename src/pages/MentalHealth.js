@@ -14,18 +14,9 @@ function MentalHealth() {
     },
     {
       title: "Recognizing Mental Health Issues",
-      description: "Learn about common mental health issues and how to recognize the signs.",
-      image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
-    },
-    {
-      title: "Meditation Guides and Activities",
-      description: "Find meditation guides and activities to help you relax and focus.",
-      image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
-    },
-    {
-      title: "Mental Health Guides",
-      description: "Find guides for mental health support and crisis intervention.",
-      image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
+      description: "Learn about common mental health issues and how to recognize the signs. TRIGGER WARNING: This page contains sensitive content.",
+      image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg",
+      path: "/mental-health-issues"
     }
   ];
 

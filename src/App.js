@@ -19,6 +19,9 @@ import HurricanePreparedness from './pages/HurricanePreparedness';
 import SevereThunderstormSafety from './pages/SevereThunderstormSafety';
 import FloodSafety from './pages/FloodSafety';
 import WildfireSafety from './pages/WildfireSafety';
+import FireTips from './pages/FireTips';
+import OnCampusFire from './pages/OnCampusFire';
+import MentalHealthIssues from './pages/MentalHealthIssues';
 import './App.css';
 
 function App() {
@@ -44,6 +47,9 @@ function App() {
         <Route path="/severe-thunderstorm-safety" element={<SevereThunderstormSafety />} />
         <Route path="/flood-safety" element={<FloodSafety />} />
         <Route path="/wildfire-safety" element={<WildfireSafety />} />
+        <Route path="/fire-tips" element={<FireTips />} />
+        <Route path="/on-campus-fire" element={<OnCampusFire />} />
+        <Route path="/mental-health-issues" element={<MentalHealthIssues />} />
       </Routes>
     </Router>
   );

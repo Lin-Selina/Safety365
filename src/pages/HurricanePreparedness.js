@@ -128,19 +128,6 @@ function HurricanePreparedness() {
         "Medical Cards",
         "Vaccination Records"
       ])}
-
-      <div className="checklist-box notes-section">
-        <h3>📝 Personal Notes</h3>
-        <textarea
-          placeholder="Write your entry here..."
-          value={notes}
-          onChange={(e) => setNotes(e.target.value)}
-          className="notes-input"
-        />
-        <button className="log-mood-button" onClick={handleNotesClick}>
-          Log This Note
-        </button>
-      </div>
     </div>
   );
 }

@@ -18,6 +18,11 @@ function CampusSafety() {
       </div>
 
       <div className="campus-box">
+        <h2>🏫 Self-Defense Seminars</h2>
+        <p>Contact the UF Police Department for Information about their self-defense seminars.</p>
+      </div>
+
+      <div className="campus-box">
         <h2>📱 Emergency Alerts</h2>
         <p>Sign up for UF Alerts through the <a href="https://ufalert.ufl.edu/">UF Alert System</a> to stay informed of any emergencies or safety announcements. These alerts are timely and can be critical in emergencies.</p>
       </div>
