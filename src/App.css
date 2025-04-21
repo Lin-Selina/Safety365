@@ -362,21 +362,25 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 15px;
   margin-top: 20px;
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 .login-input {
   width: 250px;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--primary-color);
   border-radius: 5px;
   font-size: 16px;
+  color: var(--text-color);
+  background-color: white;
 }
 
 .login-button {
   width: 250px;
   padding: 12px;
-  background-color: #1f5e88;
-  color: white;
+  background-color: var(--secondary-color);
+  color: var(--background-color);
   font-size: 16px;
   border: none;
   border-radius: 8px;
@@ -385,12 +389,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .login-button:hover {
-  background-color: #2980b9;
+  background-color: var(--accent-color);
 }
 
 .login-heading {
   font-size: 2rem;
-  color: #2c3e50;
+  color: var(--primary-color);
   margin-bottom: 10px;
 }
 
@@ -400,21 +404,25 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 15px;
   margin-top: 20px;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .signup-input {
   width: 250px;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--primary-color);
   border-radius: 5px;
   font-size: 16px;
+  color: var(--text-color);
+  background-color: white;
 }
 
 .signup-button {
   width: 250px;
   padding: 12px;
-  background-color: #1f5e88;
-  color: white;
+  background-color: var(--secondary-color);
+  color: var(--background-color);
   font-size: 16px;
   border: none;
   border-radius: 8px;
@@ -423,12 +431,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .signup-button:hover {
-  background-color: #2980b9;
+  background-color: var(--accent-color);
 }
 
 .signup-heading {
   font-size: 2rem;
-  color: #2c3e50;
+  color: var(--primary-color);
   margin-bottom: 10px;
 }
 
