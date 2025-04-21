@@ -92,7 +92,7 @@ function ActiveThreats() {
 
       {coords && (
         <>
-          {address && <p>Approximate Address: {address}</p>}
+          {address && <p>Your Approximate Address: {address}</p>}
           <MapContainer center={[coords.lat, coords.lon]} zoom={13} style={{ height: '500px', width: '100%' }}>
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
