@@ -38,3 +38,10 @@ VALUES (
   '2025-04-17 07:00:00',
   'Hit and Run Crash'
 );
+
+INSERT INTO crime_reports (address, report_date, description)
+VALUES (
+  '1765 Stadium Rd, Gainesville, FL',
+  '2025-04-17 12:37:00',
+  'Arrest'
+);
