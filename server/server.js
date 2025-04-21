@@ -137,25 +137,38 @@ app.get("/search-entries", authenticateToken, (req, res) => {
 
 // Handle location data (no auth needed)
 app.post("/api/location", async (req, res) => {
-  const { lat, lon } = req.body;
+  const { lat, lon, address } = req.body;
 
-  if (!lat || !lon) {
-    return res.status(400).json({ message: "Latitude and longitude required." });
+  const query = lat && lon
+    ? `${lat}+${lon}`
+    : encodeURIComponent(address);
+
+  if (!query) {
+    return res.status(400).json({ message: "Location data required." });
   }
 
   try {
     const apiKey = 'd30a1c28965d4a0994d1b29ec6b1d6e8';
     const response = await axios.get(
-      `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lon}&key=${apiKey}`
+      `https://api.opencagedata.com/geocode/v1/json?q=${query}&key=${apiKey}`
     );
 
-    const address = response.data?.results?.[0]?.formatted || 'Unknown location';
-    res.json({ address });
+    const location = response.data?.results?.[0];
+    if (!location) throw new Error('No location found');
+
+    res.json({
+      coords: {
+        lat: location.geometry.lat,
+        lon: location.geometry.lng
+      },
+      address: location.formatted
+    });
   } catch (error) {
     console.error("Geocoding failed:", error.message);
     res.status(500).json({ message: "Error fetching location." });
   }
 });
+
 
 // Save checkbox state to hurricane_checklist
 app.post('/checkbox', (req, res) => {
@@ -181,6 +194,19 @@ app.get('/api/checkbox', (req, res) => {
       console.error('Error fetching checklist:', err);
       return res.status(500).json({ message: 'Database error' });
     }
+    res.status(200).json(results);
+  });
+});
+
+app.get('/api/crime-reports', (req, res) => {
+  const query = 'SELECT * FROM crime_reports';
+
+  db.query(query, async (err, results) => {
+    if (err) {
+      console.error('Error fetching crime reports:', err);
+      return res.status(500).json({ message: 'Database error' });
+    }
+
     res.status(200).json(results);
   });
 });

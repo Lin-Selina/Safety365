@@ -24,3 +24,17 @@ CREATE TABLE hurricane_checklist (
   item VARCHAR(255) NOT NULL UNIQUE,
   checked BOOLEAN NOT NULL
 );
+
+CREATE TABLE crime_reports (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  address VARCHAR(255) NOT NULL,
+  report_date DATETIME NOT NULL,
+  description TEXT NOT NULL
+);
+
+INSERT INTO crime_reports (address, report_date, description)
+VALUES (
+  '1273 Gale Lemerand Dr, Gainesville, FL',
+  '2025-04-17 07:00:00',
+  'Hit and Run Crash'
+);
