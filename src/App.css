@@ -783,3 +783,22 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.5;
   color: var(--text-color);
 }
+
+.health-box {
+  border: 2px solid #9fd4a3;
+  background-color: #ddf2d1;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.health-box h2 {
+  margin-bottom: 12px;
+  color: #7db386;
+}
+
+.health-box p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}

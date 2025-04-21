@@ -14,7 +14,7 @@ function MentalHealthIssues() {
       Mental health affects how we think, feel, and act. It also influences how we handle stress, relate to others, and make choices. Understanding common mental health issues and how to manage them can improve our overall well-being.
       </p>
 
-      <div className="campus-box">
+      <div className="health-box">
         <h2>Common Mental Health Issues</h2>
         <p><strong>Depression:</strong> Persistent sadness, loss of interest, changes in appetite or sleep, and feelings of hopelessness.</p>
         <p><strong>Anxiety Disorders:</strong> Excessive worry, panic attacks, social anxiety, and fear that interferes with daily life.</p>
@@ -23,7 +23,7 @@ function MentalHealthIssues() {
         <p><strong>Obsessive-Compulsive Disorder (OCD):</strong> Unwanted thoughts and repetitive behaviors that interfere with daily functioning.</p>
       </div>
 
-      <div className="campus-box">
+      <div className="health-box">
         <h2>Signs You May Be Struggling</h2>
         <p>Persistent sadness or hopelessness</p>
         <p>Feeling overwhelmed, anxious, or panicked</p>
@@ -34,7 +34,7 @@ function MentalHealthIssues() {
         <p>Thoughts of self-harm or suicide (please seek help immediately)</p>
       </div>
 
-      <div className="campus-box">
+      <div className="health-box">
       <h2>Ways to Cope and Improve Mental Health</h2>
         <p>Talk to a trusted friend, family member, or counselor</p>
         <p>Stay physically active and eat nutritious meals</p>
