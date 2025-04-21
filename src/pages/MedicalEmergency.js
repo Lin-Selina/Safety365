@@ -49,7 +49,7 @@ function MedicalEmergency() {
         </p>
       </div>
 
-      <div className="accordion-itemx">
+      <div className="accordion-item">
         <h2>🫀 Fainting</h2>
         <p>
           If someone faints, check for breathing and responsiveness. If they’re breathing, lay them on their back and elevate
