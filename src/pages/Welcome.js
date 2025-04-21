@@ -40,7 +40,7 @@ function Welcome() {
   return (
     <div className="blank-page">
       <Header />
-      {/* Banner Section */}
+   
       <div className="welcome-banner">
         <h1 className="welcome-heading">We make safety as a priority at the University of Florida!</h1>
         <div className="welcome-buttons">
@@ -48,7 +48,7 @@ function Welcome() {
           <button className="nav-button" onClick={handleSignInClick}>Sign in using GatorLink</button>
         </div>
       </div>
-      {/* Grid Layout */}
+
       <div className="welcome-grid">
         {gridItems.map((item, index) => (
           <div className="grid-item" key={index}>

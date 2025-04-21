@@ -8,9 +8,7 @@ function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle the submitted question, e.g., send it to an API
     console.log('Submitted question:', question);
-    // Clear the input after submission
     setQuestion('');
   };
 
@@ -32,7 +30,7 @@ function ContactForm() {
         </button>
       </form>
       <p className="contact-email">
-        📧 Contact us at <a href="mailto:safety2025@gmail.com">safety2025@gmail.com</a> for any questions.
+        Contact us at <a href="mailto:safety2025@gmail.com">safety2025@gmail.com</a> for any questions.
       </p>
     </div>
   );

@@ -69,7 +69,7 @@ function HurricanePreparedness() {
       <Header />
       <h1>Hurricane Preparedness</h1>
 
-      {renderChecklist("🌪️ Emergency Supply Checklist", [
+      {renderChecklist("Emergency Supply Checklist", [
         "Flashlight with extra batteries",
         "Battery Operated Radio with extra batteries",
         "Candles with matches/lighter",
@@ -80,7 +80,7 @@ function HurricanePreparedness() {
         "Hand sanitizer and disinfectant wipes"
       ])}
 
-      {renderChecklist("🩹 First-Aid Checklist", [
+      {renderChecklist("First-Aid Checklist", [
         "Band-Aids",
         "Peroxide",
         "Prescriptions",
@@ -96,7 +96,7 @@ function HurricanePreparedness() {
         "Antacid (for stomach upset)"
       ])}
 
-      {renderChecklist("🧻 Personal Necessities Checklist", [
+      {renderChecklist("Personal Necessities Checklist", [
         "Toilet Paper",
         "Garbage Bags",
         "Ziplock Bags",
@@ -109,7 +109,7 @@ function HurricanePreparedness() {
         "Phone Charger"
       ])}
 
-      {renderChecklist("🍽️ Food and Drinks Checklist", [
+      {renderChecklist("Food and Drinks Checklist", [
         "Manual Can Opener",
         "Water for 3 days for each person",
         "Non-perishable food items",
@@ -120,7 +120,7 @@ function HurricanePreparedness() {
         "Snacks"
       ])}
 
-      {renderChecklist("📄 Documents Checklist", [
+      {renderChecklist("Documents Checklist", [
         "State ID / Driver's License",
         "Passport",
         "Wills",

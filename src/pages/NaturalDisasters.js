@@ -57,7 +57,7 @@ function NaturalDisasters() {
           </div>
         ))}
       </div>
-      <h2>📢 Stay Informed</h2>
+      <h2>Stay Informed</h2>
       <p>Always monitor GatorSafe, UF Alerts, or the National Weather Service for real-time updates. Pay attention to instructions from campus safety officials, and have a plan in place with your roommates or friends in case you’re separated during an emergency.</p>
 
       <p>Preparedness is key. Take a few minutes to review emergency routes in your dorm or apartment and make sure you know how to get emergency alerts from UF.</p>

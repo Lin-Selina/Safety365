@@ -30,7 +30,7 @@ function MentalHealth() {
           <div 
           className="grid-item" 
           key={index}
-          onClick={() => navigate(item.path)} // Navigate on click
+          onClick={() => navigate(item.path)} 
           style={{ cursor: "pointer" }}>
             <img src={item.image} alt={item.title} className="grid-image" />
             <h3>{item.title}</h3>

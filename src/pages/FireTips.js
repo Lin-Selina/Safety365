@@ -9,14 +9,14 @@ function FireTips() {
       
       <Header />
       
-      <h1>🔥 Fire Safety</h1>
+      <h1>Fire Safety</h1>
       <p>
         Fires can escalate quickly. Understanding what to do in the moment can make all the difference.
         Follow the steps below to stay safe during a fire emergency.
       </p>
 
       <div className="fire-box">
-        <h2>🚨 What to Do During a Fire</h2>
+        <h2>What to Do During a Fire</h2>
         <p>Stay as calm as possible. A clear mind will help you make smart decisions quickly.</p>
         <p>If a fire alarm hasn’t been triggered, pull it to alert others in the building.</p>
         <p>Call 911 when it's safe to do so. Provide your exact location and details about the fire.</p>
@@ -29,14 +29,14 @@ function FireTips() {
       </div>
 
       <div className="fire-box">
-        <h2>✅ After You've Evacuated</h2>
+        <h2>After You've Evacuated</h2>
         <p>Go directly to your building’s designated assembly point and stay there until emergency personnel say it’s safe to leave.</p>
         <p>Do not re-enter the building under any circumstance until given official clearance.</p>
         <p>If someone is unaccounted for or you believe a pet is still inside, immediately inform the firefighters or emergency services.</p>
       </div>
 
       <div className="fire-box">
-        <h2>📋 Stay Prepared</h2>
+        <h2>Stay Prepared</h2>
         <p>Know the location of all fire exits and alarms in your building.</p>
         <p>Review your residence or facility's evacuation plan regularly.</p>
         <p>Keep your phone charged and your shoes and essentials near your bed in case of a nighttime fire.</p>

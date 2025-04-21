@@ -30,9 +30,7 @@ function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle the submitted question, e.g., send it to an API
     console.log('Submitted question:', question);
-    // Clear the input after submission
     setQuestion('');
   };
 
@@ -79,8 +77,6 @@ function FAQ() {
           answer="If you have any issues or questions, please contact the UF Campus Safety team at (xxx) xxx-xxxx or email safety@ufl.edu for prompt assistance."
         />
       </div>
-      {/* Questions section placed right below the FAQ area */}
-      {/* <ContactForm /> */}
     </div>
   );
 }
