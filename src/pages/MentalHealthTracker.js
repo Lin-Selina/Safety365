@@ -133,19 +133,6 @@ function MentalHealthTracker() {
             </ul>
           )}
         </div>
-
-        <div className="suggestions-column">
-          <h3>Suggested Tips</h3>
-          {Array.isArray(entries) && entries.length === 0 ? <p>No suggestions yet.</p> : (
-            <ul>
-              {Array.isArray(entries) && entries.map((entry, index) => (
-                <li key={index} className="suggestion-item">
-                  {"Add the suggestions here!"}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
       </div>
     </div>
   );
