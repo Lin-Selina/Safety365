@@ -733,3 +733,53 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 10px;
   line-height: 1.5;
 }
+
+.medical-page {
+  background-color: var(--background-color);
+  padding: 100px 20px;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.medical-page h1 {
+  color: var(--primary-color);
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+
+.medical-intro {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.accordion-item {
+  background: white;
+  margin: 10px auto;
+  border-radius: 10px;
+  padding: 15px 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.07);
+  max-width: 800px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.accordion-item:hover {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+}
+
+.accordion-item h2 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.accordion-item p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
