@@ -919,3 +919,62 @@ h1, h2, h3, h4, h5, h6 {
 .submit-button:hover {
   background-color: #e84d15;
 }
+
+.hurricane-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 0 20px;
+}
+
+.vertical-checklist {
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.hurricane-checklist-section {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 20px;
+}
+
+.hurricane-section-header {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.hurricane-section-icon {
+  font-size: 22px;
+  margin-right: 12px;
+}
+
+/* Color Themes */
+.section-green { background-color: #e4f8e4; }
+.section-blue { background-color: #e4f0fb; }
+.section-yellow { background-color: #fff9dd; }
+.section-pink { background-color: #ffe6ee; }
+.section-purple { background-color: #f1e6ff; }
+
+.hurricane-checklist {
+  list-style: none;
+  padding: 0;
+}
+
+.hurricane-checklist li {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.hurricane-checklist input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+}
