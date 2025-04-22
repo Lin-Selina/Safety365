@@ -9,13 +9,13 @@ function FireSafety() {
     {
       title: "General Tips for Fire Safety",
       description: "Learn the basics of fire safety and prevention.",
-      image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg", 
+      image: "/fire tips.png",
       path: "/fire-tips"
     },
     {
       title: "On-Campus Housing Fire Safety",
       description: "Learn about fire safety protocols in your dormitory.",
-      image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg",
+      image: "/fire dorms.png",
       path: "/on-campus-fire"
     }
   ];
