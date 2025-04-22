@@ -9,13 +9,13 @@ function MentalHealth() {
     {
       title: "Mental Health Tracker",
       description: "Use our tools to track your mental health and create a wellness plan.",
-      image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg", 
+      image: "/mental health tracker.png",
       path: "/mental-health-tracker"
     },
     {
       title: "Recognizing Mental Health Issues",
       description: "Learn about common mental health issues and how to recognize the signs. TRIGGER WARNING: This page contains sensitive content.",
-      image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg",
+      image: "/mental issues.png",
       path: "/mental-health-issues"
     }
   ];
