@@ -9,31 +9,31 @@ function NaturalDisasters() {
     {
       title: "Tornado Safety",
       description: "Learn how to stay safe during a tornado and what to do before, during, and after one.",
-      image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg", 
+      image: "/tornado.png", 
       path: "/tornado-safety"
     },
     {
       title: "Hurricane Preparedness",
       description: "Get tips on how to prepare for hurricanes and what to do during one.",
-      image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg",
+      image: "/hurricane.png", 
       path: "/hurricane-preparedness"
     },
     {
       title: "Severe Thunderstorm Safety",
       description: "Understand the risks of severe thunderstorms and how to protect yourself.",
-      image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg",
+      image: "/thunderstorm.png", 
       path: "/severe-thunderstorm-safety"
     },
     {
       title: "Flood Safety",
       description: "Learn how to stay safe during floods and what to do before, during, and after one.",
-      image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg",
+      image: "/flood.png", 
       path: "/flood-safety"
     },
     {
       title: "Wildfire Safety",
       description: "Get tips on how to prepare for wildfires and what to do during one.",
-      image: "https://ih1.redbubble.net/image.3880118575.6668/flat,750x,075,f-pad,750x1000,f8f8f8.jpg",
+      image: "/wildfire.png", 
       path: "/wildfire-safety"
     }
   ];
