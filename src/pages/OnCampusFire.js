@@ -85,51 +85,49 @@ function FireTips() {
   const currentLevel = levels[levelIndex];
 
   return (
-    <div className="blank-page flex flex-col items-center">
+    <div className="blank-page">
       <Header />
-
-      <p className="text-center max-w-xl mt-4">
-        Many fires on campus are caused by placing potential fire hazards in dorm rooms. Test your knowledge and see if you can identify the potential hazards in these on-campus housing images.
-      </p>
-
-      <h1 className="text-center text-2xl font-bold my-4">Spot the Fire Hazard in the Dorm</h1>
-
-      {!showImage && (
-        <button
-          onClick={handleClick}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-        >
-          Start Here
-        </button>
-      )}
-
-      {showImage && (
-        <div className="mt-4 flex justify-center">
-          <div className="relative" style={{ width: `${displayWidth}px` }}>
+  
+      <div className="firegame-container">
+        <p className="game-intro">
+          Many fires on campus are caused by placing potential fire hazards in dorm rooms. Test your knowledge and see if you can identify the potential hazards in these on-campus housing images.
+        </p>
+  
+        <h1 className="game-title">Spot the Fire Hazard in the Dorm</h1>
+  
+        {!showImage && (
+          <button onClick={handleClick} className="explore-button">
+            Start Here
+          </button>
+        )}
+  
+        {showImage && (
+          <div className="image-wrapper">
             <img
               src={currentLevel.image}
               alt={`Level ${levelIndex + 1}`}
-              style={{ width: '100%', height: 'auto', cursor: 'crosshair' }}
+              className="fire-image"
               onClick={handleImageClick}
             />
           </div>
-        </div>
-      )}
-
-      {feedback && (
-        <p className="mt-4 text-lg text-center max-w-lg px-4">{feedback}</p>
-      )}
-
-      {gameCompleted && (
-        <button
-          onClick={handleClick}
-          className="mt-6 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
-        >
-          Restart Game
-        </button>
-      )}
+        )}
+  
+        {feedback && (
+          <div className="feedback-box">
+            <p>{feedback}</p>
+          </div>
+        )}
+  
+        {gameCompleted && (
+          <button onClick={handleClick} className="explore-button mt-4">
+            Restart Game
+          </button>
+        )}
+      </div>
     </div>
   );
+  
+ 
 }
 
 export default FireTips;
