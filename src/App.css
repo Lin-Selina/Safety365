@@ -473,17 +473,18 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  background: var(--background-color);
-  color: var(--text-color);
+  background: #e8ddf5;
+  color: #333;
   transition: 0.3s;
   text-align: center;
-  width: 100%; /* Makes all buttons equal width */
+  width: 100%;
 }
 
 .mood-button.selected {
-  background: var(--primary-color);
-  color: var(--background-color);
+  background: #a883d9;
+  color: white;
 }
+
 
 .notes-section {
   flex: 1;
@@ -976,4 +977,25 @@ h1, h2, h3, h4, h5, h6 {
 .hurricane-checklist input[type="checkbox"] {
   margin-right: 10px;
   transform: scale(1.2);
+}
+
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search-bar {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 3px solid #3f73b7;
+  border-radius: 40px;
+  outline: none;
+  width: 80%;
+  max-width: 500px;
+  background-color: white;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/622/622669.png'); /* magnifying glass */
+  background-position: right 15px center;
+  background-repeat: no-repeat;
+  background-size: 20px;
 }
