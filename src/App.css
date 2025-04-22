@@ -786,7 +786,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .health-box {
   border: 2px solid #9fd4a3;
-  background-color: #ddf2d1;
+  background-color: #e0f1d5;
   padding: 20px;
   margin: 20px 0;
   border-radius: 10px;
@@ -795,7 +795,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .health-box h2 {
   margin-bottom: 12px;
-  color: #7db386;
+  color: #335a3a;
 }
 
 .health-box p {
@@ -957,7 +957,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 12px;
 }
 
-/* Color Themes */
 .section-green { background-color: #e4f8e4; }
 .section-blue { background-color: #e4f0fb; }
 .section-yellow { background-color: #fff9dd; }
