@@ -42,7 +42,7 @@ function Welcome() {
       <Header />
    
       <div className="welcome-banner">
-        <h1 className="welcome-heading">We make safety as a priority at the University of Florida!</h1>
+        <h1 className="welcome-heading">We make safety a priority at the University of Florida!</h1>
         <div className="welcome-buttons">
           <button className="welcome-button" onClick={handleGuestClick}>Use As Guest</button>
           <button className="nav-button" onClick={handleSignInClick}>Sign in using GatorLink</button>
