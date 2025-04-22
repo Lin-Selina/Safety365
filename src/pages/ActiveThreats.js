@@ -91,32 +91,39 @@ function ActiveThreats() {
       <button className="login-button" onClick={handleGetLocation}>Get My Location</button>
 
       {coords && (
-        <>
-          {address && <p>Your Approximate Address: {address}</p>}
-          <MapContainer center={[coords.lat, coords.lon]} zoom={13} style={{ height: '500px', width: '100%' }}>
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution='&copy; OpenStreetMap contributors'
-            />
-            
-            {/* Marker for user location */}
-            <Marker position={[coords.lat, coords.lon]}>
-              <Popup>You are here: {address}</Popup>
-            </Marker>
+  <div className="location-section">
+    {address && (
+      <div className="address-box">
+        Your Approximate Address: {address}
+      </div>
+    )}
+    
+    <div className="map-wrapper">
+      <MapContainer center={[coords.lat, coords.lon]} zoom={13} className="threat-map">
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; OpenStreetMap contributors'
+        />
 
-            {/* Markers for crimes */}
-            {crimeMarkers.map((crime, idx) => (
-              <Marker key={idx} position={[crime.lat, crime.lon]} icon={redIcon}>
-                <Popup>
-                  <strong>{crime.description}</strong><br />
-                  {crime.address}<br />
-                  Date: {new Date(crime.report_date).toLocaleString()}
-                </Popup>
-              </Marker>
-            ))}
-          </MapContainer>
-        </>
-      )}
+        {/* User location */}
+        <Marker position={[coords.lat, coords.lon]}>
+          <Popup>You are here: {address}</Popup>
+        </Marker>
+
+        {/* Crime markers */}
+        {crimeMarkers.map((crime, idx) => (
+          <Marker key={idx} position={[crime.lat, crime.lon]} icon={redIcon}>
+            <Popup>
+              <strong>{crime.description}</strong><br />
+              {crime.address}<br />
+              Date: {new Date(crime.report_date).toLocaleString()}
+            </Popup>
+          </Marker>
+        ))}
+      </MapContainer>
+    </div>
+  </div>
+)}
     </div>
   );
 }

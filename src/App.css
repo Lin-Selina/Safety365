@@ -999,3 +999,34 @@ h1, h2, h3, h4, h5, h6 {
   background-repeat: no-repeat;
   background-size: 20px;
 }
+
+.location-section {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.address-box {
+  margin: 0 auto 20px auto;
+  max-width: 700px;
+  padding: 12px 20px;
+  background-color: #fdf9e6;
+  border: 1px solid #d6cfa6;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.map-wrapper {
+  margin-top: 10px;
+}
+
+.threat-map {
+  height: 500px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #d6cfa6;
+  overflow: hidden;
+  z-index: 0;
+}
+
